@@ -1,19 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Header from './common-parts/Header.jsx'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-function App() {
-  const [count, setCount] = useState(0)
+import { Root } from './routes/root';
+//import { ROUTES } from './utils/constants/router';
 
-  return (
-    <>
-      <div>
-      <Header />
-      </div>
-    </>
-  )
-}
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Root />
+  }
+]);
 
-export default App
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false
+    }
+  }
+});
+
+export const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <RouterProvider router={router} />
+  </QueryClientProvider>
+);
