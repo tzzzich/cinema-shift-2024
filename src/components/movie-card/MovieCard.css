@@ -1,14 +1,19 @@
+
 .moviecard {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
   border-radius: 8px;
   overflow: hidden;
-  flex-basis: 20rem;
+}
+
+.moviecard.vertical {
+  flex-basis: 20rem; 
 }
 
 .moviecard__img-container {
   position: relative;
+  height: 400px;
 }
 
 .moviecard img {
@@ -21,7 +26,7 @@
 .moviecard__info-block {
   font: 'Roboto';
   position: absolute;
-  bottom: 5px;
+  bottom: 0;
   right: 0;
   background-color: #F5F5F8;
   color: #141C24;
@@ -34,10 +39,16 @@
   min-width: 145px;
 }
 
+.moviecard__info-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: -webkit-fill-available;
+}
+
 .moviecard__description-wrapper {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  width: 100%;
 }
 
 .moviecard__title {
@@ -72,6 +83,60 @@
 
 .moviecard__btn:hover {
   opacity: 0.7;
+}
+
+.moviecard.horizontal {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  gap: 1em;
+}
+
+.moviecard.horizontal  img {
+  height: 400px;
+  width: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.moviecard.horizontal .moviecard__title {
+  font-size: xx-large;
+  font-weight: bolder;
+  font: 'Roboto';
+}
+
+.moviecard.horizontal .moviecard__info-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: -webkit-fill-available;
+  min-height: 400px;
+}
+
+.moviecard__description {
+  font-size: 18px;
+  font-weight: 400;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.moviecard__description.full {
+  -webkit-line-clamp: initial; 
+  overflow: visible;
+}
+
+.show-more-link {
+  color: rgb(192, 192, 192);
+  cursor: pointer;
+  margin-left: 5px;
+  font-size: 18px;
+}
+
+.show-more-link:hover {
+  text-decoration: underline; 
 }
 
 @media (max-width: 768px) {

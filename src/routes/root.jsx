@@ -2,8 +2,9 @@ import { useQuery } from '@tanstack/react-query';
 
 import { getFilms } from '../utils/api/requests';
 
-import Header from '/src/components/Header.jsx';
-import MovieCard from '/src/components/MovieCard.jsx';
+import Header from '/src/components/header/Header.jsx';
+
+import MovieCard from '/src/components/movie-card/MovieCard.jsx';
 
 export const Root = () => {
   const getFilmsQuery = useQuery({
@@ -11,7 +12,7 @@ export const Root = () => {
     queryFn: getFilms,
     select: ({ data }) => {
       return data.films.map((film) => (
-        <MovieCard key={film.id} film={film} />
+        <MovieCard key={film.id} film={film} orientation="vertical" />
       ));
     }
   });
