@@ -1,0 +1,39 @@
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    color: #000000;
+    border-bottom: solid rgb(210, 202, 202);
+    font-weight: 700;
+  }
+  
+  .header__left {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .header__right {
+    flex: 0.8;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .header__logo {
+    width: 40px; 
+    height: auto;
+  }
+  
+  .header__option {
+    padding: 10px 20px;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  
+  .header__option:hover {
+    background-color: rgba(230, 220, 220, 0.1); 
+  }
+  
