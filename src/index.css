@@ -72,6 +72,12 @@ button:active {
   gap: 1em;
 }
 
+.movie-card-extended {
+  padding: 40px 0;
+  width: 70%;
+  margin: 0 auto;
+}
+
 
 #error-page {
   display: flex;

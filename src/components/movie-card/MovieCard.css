@@ -10,6 +10,10 @@
 .moviecard.vertical {
   flex-basis: 20rem; 
 }
+.moviecard.vertical .moviecard__info-wrapper {
+  justify-content: space-between;
+  height: 100%;
+}
 
 .moviecard__img-container {
   position: relative;

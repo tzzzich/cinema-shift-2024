@@ -9,7 +9,6 @@ import MovieCardDescription from './MovieCardDescription';
 
 
 const MovieCard = ({film, orientation}) => {
-  console.log(film);
   const year = film.releaseDate && film.releaseDate !== '-' ? film.releaseDate.substr(film.releaseDate.length - 4) : '';
   const countryYear = year ? film.country.name + ', ' + year : film.country.name
 

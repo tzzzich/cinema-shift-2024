@@ -7,7 +7,7 @@ const MovieCardDescription = ({ description }) => {
   useEffect(() => {
     if (descriptionRef.current) {
       const isTextOverflowed = descriptionRef.current.scrollHeight > descriptionRef.current.clientHeight;
-      setShowFullDescription(isTextOverflowed);
+      setShowFullDescription(!isTextOverflowed);
     }
   }, [description]);
 
@@ -17,9 +17,9 @@ const MovieCardDescription = ({ description }) => {
 
   return (
     <div>
-      <p ref={descriptionRef} className={`moviecard__description ${showFullDescription ? 'full' : ''}`}>
+      <span ref={descriptionRef} className={`moviecard__description ${showFullDescription ? 'full' : ''}`}>
         {description}
-      </p>
+      </span>
       {showFullDescription && (
         <span className="show-more-link" onClick={toggleDescription} >скрыть</span>
       )}
